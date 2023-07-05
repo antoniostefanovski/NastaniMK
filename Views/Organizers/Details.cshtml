@@ -1,0 +1,66 @@
+﻿@model NastaniMK_2023.Models.Organizer
+
+@{
+    ViewBag.Title = "Детали";
+}
+
+<h3 class="textColor mt-5">Детали за организатор</h3>
+
+<div>
+    <h4>Organizer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrganizerType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrganizerType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrganizerURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrganizerURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Banner)
+        </dt>
+
+        <dd>
+            <img src="@Model.Banner" style="width: 80px; height: 80px;"/>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Измени", "Edit", new { id = Model.Id }, new {@class="btn btn-danger"}) |
+    @Html.ActionLink("Назад", "Index", null, new { @class = "btn btn-primary" })
+</p>

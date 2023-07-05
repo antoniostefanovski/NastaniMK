@@ -1,0 +1,66 @@
+﻿@model NastaniMK_2023.Models.CombinedModel
+@{
+    ViewBag.Title = "Купи Карти";
+}
+
+<h3 class="mt-5">Купи Карти за <span class="textColor">@Model.EventName</span></h3>
+<p class="lead">Цена на карта: <span class="textColor fw-semibold">@Model.BuyTicketModel.Price &euro;</span></p>
+
+<div class="card">
+    <div class="card-header">
+        Ве молиме пополнете ги празните полиња
+    </div>
+    <div class="card-body">
+        @using (Html.BeginForm("OnBuyTickets", "Events"))
+        {
+
+            <div class="form-group">
+                @Html.Label("Внесете Име и Презиме")
+                @Html.TextBoxFor(u => u.BuyTicketModel.UserName, null, new { @class = "form-control" })
+                @Html.ValidationMessageFor(u => u.BuyTicketModel.UserName, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Внесете Email адреса")
+                @Html.TextBoxFor(u => u.BuyTicketModel.Email, null, new { @class = "form-control" })
+                @Html.ValidationMessageFor(u => u.BuyTicketModel.Email, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Внесете број за контакт")
+                @Html.TextBoxFor(u => u.BuyTicketModel.Contact, null, new { @class = "form-control" })
+                @Html.ValidationMessageFor(u => u.BuyTicketModel.Contact, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Внесете број на карти")
+                @Html.TextBoxFor(u => u.BuyTicketModel.NumberOfTickets, null, new { @class = "form-control" })
+                @Html.ValidationMessageFor(u => u.BuyTicketModel.NumberOfTickets, "", new { @class = "text-danger" })
+            </div>
+
+            @Html.HiddenFor(u => u.BuyTicketModel.Price)
+            @Html.HiddenFor(u => u.EventId)
+
+            <div>
+                <input type="submit" value="Продолжи" class="btn btn-success mt-2" />
+            </div>
+
+        }
+    </div>
+</div>
+
+<div>
+    @if (User.IsInRole("Administrator") || User.IsInRole("Organizer"))
+    {
+        @Html.ActionLink("Назад", "Index", null, new { @class = "btn btn-primary mt-5" })
+    }
+    else
+    {
+        @Html.ActionLink("Назад", "IndexUser", null, new { @class = "btn btn-primary mt-5" })
+    }
+
+
+</div>
+
+
+

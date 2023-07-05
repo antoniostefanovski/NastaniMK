@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title l НастаниМК</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/jqueryui")
+    <link href="~/Styles/HomeStyle.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="~/Assets/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm bgColor bgColor">
+        <div class="container">
+            @Html.ActionLink("НастаниМК", "Index", "Home", new { area = "" }, new { @class = "navbarTitle" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("Почетна", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    @if(User.IsInRole("Administrator") || User.IsInRole("Organizer") || User.IsInRole("Moderator")) { 
+                    <li>@Html.ActionLink("Настани", "Index", "Events", new { area = "" }, new { @class = "nav-link" })</li>
+                    }else { 
+                    <li>@Html.ActionLink("Настани", "IndexUser", "Events", new { area = "" }, new { @class = "nav-link" })</li>
+                    }
+                    <li>@Html.ActionLink("За Нас", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Контакт", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    @if (User.IsInRole("Administrator") || User.IsInRole("Organizer") || User.IsInRole("Moderator"))
+                    {
+                        <li>@Html.ActionLink("Организатори", "Index", "Organizers", new { area = "" }, new { @class = "nav-link" })</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Организатори", "IndexUser", "Organizers", new { area = "" }, new { @class = "nav-link" })</li>
+                    }
+
+                    @if (User.IsInRole("Administrator"))
+                    {
+                        <li>@Html.ActionLink("Улоги", "AddUserToRole", "Account", new { area = "" }, new { @class = "nav-link" })</li>
+                    }
+
+                </ul>
+                 @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="finki_footer">
+                <p>&copy; @DateTime.Now.Year - НастаниМК - Сите права се задржани.</p>
+                <div class="finki_icons">
+                    <p class="finki_socialLinks">
+                    <span><a href="https://github.com/antoniostefanovski" target="_blank"><i class="bi bi-github"></i></a></span>
+                    <span><a href="https://www.linkedin.com/in/antonio-stefanovski-6bb534238/" target="_blank"><i class="bi bi-linkedin"></i></a></span>
+                    <span><a href="https://www.facebook.com/antonio.stefanovsky/" target="_blank"><i class="bi bi-facebook"></i></a></span>
+                    </p>
+                </div>
+            </div>
+           
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

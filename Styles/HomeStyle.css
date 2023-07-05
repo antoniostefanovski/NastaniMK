@@ -1,0 +1,105 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap');
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.finki_footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.finki_socialLinks {
+    font-size: 1.2rem;
+}
+
+.textColor {
+    color: #57648C;
+}
+
+.fontsize {
+    font-size: 1.1rem;
+}
+
+.bgColor {
+    background: #57648C;
+}
+
+.navbarTitle {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.navbarTitle:hover {
+    color: white;
+}
+
+.nav-link {
+    color: white;
+    margin-left: 20px;
+}
+
+.home-img {
+    height: 400px;
+    border-radius: 3%;
+    transition: transform 0.7s;
+    cursor: pointer;
+}
+
+.event-img {
+    border-radius: 3%;
+    transition: transform 0.7s;
+    cursor: pointer;
+}
+
+.home-img:hover, .event-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+}
+
+.custom {
+    padding: 30px;
+}
+
+.form-label {
+    font-size: 1.1rem;
+}
+
+.btn-primary {
+    border-color: #57648C;
+    background-color: #57648C;
+}
+
+.hr-custom {
+    width: 120px;
+    height: 5px;
+    background: #57648C;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.card-custom {
+    width: 300px;
+    padding: 20px;
+    border-radius: 7px;
+    text-align: center;
+    margin-right: 30px;
+    margin-bottom: 100px;
+    cursor: pointer;
+    transition: transform 0.7s, background 0.7s;
+}
+
+.icon-color {
+    color: #4BB543;
+}
+
+.card-custom:hover {
+    transform: scale(1.03);
+    background-color: #57648C;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    color: white;
+}

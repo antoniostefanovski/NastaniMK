@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Почетна";
+}
+
+<main>
+        <img src="~/Assets/nastaniMK.png" class="cover-img"/>
+
+    <section class="row mt-2" aria-labelledby="aspnetTitle">
+        <p class="lead">
+            <span class="textColor fw-semibold">НастаниМК</span> е веб апликација на која може да најдете информации за сите настани кои се оддржуваат во <span class="text-danger fw-semibold">Македонија</span>.<br />
+            Веб апликацијата <span class="textColor fw-semibold">НастаниМК</span> е креирана како проект од страна на <span>Антонио Стефановски</span> за предметот <span>Интернет Технологии</span>.
+        </p>
+        
+    </section>
+
+    <div class="column test mt-5">
+        <section>
+
+            <h4 class="text-center">Зошто баш НастаниМК ?</h4>
+            <div class="home-horizontal-title"></div>
+            <div class="d-flex mt-5">
+                <div>
+                    <p class="finki_socialLinks textColor">Сценарио 01</p>
+                    <p class="fontsize">
+                        Седејќи на кафе со вашите најмили сте зборувале за концерти на кои сакате да присуствувате ова лето.
+                        Го земате телефонот во раце и почнувате да барате информации за концерт за кој претходно сте слушнале дека ќе се оддржува во Македонија.
+                    </p>
+                    <p class="fontsize">
+                        Го пишувате изведувачот (на пример Meduza) и барате на google search.
+                        Ја отварате нашата страница и читате повеќе информации за тој концерт.
+                    </p>
+                    <p class="fontsize">
+                        <span class="textColor fw-semibold">Ајде кога веќе сум на страната, да проверам дали имаат информации за каде можам да купам карти за истиот..</span><br />
+                        Да. Карти може да купите од нас.
+                    </p>
+                </div>
+
+                <img src="~/Assets/cafe.jpg" class="home-img"/>
+            </div>
+            
+            <div class="d-flex mt-5">
+
+                <img src="~/Assets/contentGirl.jpg" class="home-img"/>
+
+                <div class="custom">
+                    <p class="finki_socialLinks textColor">Сценарио 02</p>
+                    <p class="fontsize">
+                        Гледате трејлери за филмови кои треба да излезат во 2023 и наидувате на еден интересен филм.
+                        Ве интересира кога ќе излезе тој филм па веднаш гуглате John Wick 4 Release Date.
+                    </p>
+                    <p class="fontsize">
+                        Пишува дека истиот излегува за 2 недели. Прашањето кое ве мачи е дали некое Кино го рекламира тој филм ?
+                        Ја отварате нашата страница и одите во <span class="textColor fw-semibold">Настани делот</span> каде во search bar-от пишувате John Wick 4.
+                    </p>
+                    <p class="fontsize">
+                        И да. Филмот ќе се емитува во повеќе Кина во Македонија во тој и тој период..<br />
+                        <span class="textColor fw-semibold">Сега се прашувате: Но во кои Кина ?</span> Стискате на <span class="textColor fw-semibold">Детали</span> и дознавате..
+                    </p>
+                </div>
+            </div>
+            
+
+            <div class="mt-5">
+                <a href="/Events/IndexUser" class="btn btn-primary">Скокни на Настани</a>
+            </div>
+            
+        </section>
+    </div>
+</main>
+
+<style>
+    .cover-img {
+        transition: transform 0.7s;
+    }
+
+    .cover-img:hover {
+        transform: scale(1.03);
+        box-shadow: 0px 0px 10px rgba(191, 13, 13, 0.8);
+    }
+    .home-horizontal-title {
+        width: 150px;
+        height: 3px;
+        background: red;
+        margin: auto;
+    }
+</style>

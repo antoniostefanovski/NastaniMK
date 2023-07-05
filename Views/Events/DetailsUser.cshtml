@@ -1,0 +1,49 @@
+﻿@model NastaniMK_2023.Models.OrganizerViewModel
+@{
+    ViewBag.Title = "Детали";
+}
+
+<h3 class="textColor mt-5">Детали за настан</h3>
+
+<hr/>
+
+<div class="row">
+    <div class="d-flex justify-content-center gap-5">
+
+        <div>
+            <img src="@Model.Event.ImageURL" style="border-radius: 3%; transition: transform 0.7s; cursor: pointer;" class="event-img" />
+        </div>
+
+        <div>
+            <p class="lead">Настан <br /><span class="textColor">@Model.Event.Name</span></p>
+
+            <p class="lead">Организатор <br /><span class="textColor">@Model.Event.Organizer.Name</span></p>
+
+            <p class="lead">Датум и Време <br /><span class="textColor">@Model.Event.Date - @Model.Event.Time</span></p>
+        </div>
+
+        <div>
+            <p class="lead">Локација <br /><span class="textColor">@Model.Event.Location</span></p>
+
+            <p class="lead">Град <br /><span class="textColor">@Model.Event.City</span></p>
+
+            <p class="lead">Карти <br />@Html.ActionLink(Model.Event.Tickets, "BuyTickets", new { id = Model.Event.Id }, new { @class = "btn btn-success" })</p>
+        </div>
+
+    </div>
+
+    <div>
+        @Html.ActionLink("Назад", "IndexUser", null, new { @class = "btn btn-primary" })
+    </div>
+</div>
+
+<style>
+    .event-img {
+        max-height: 250px;
+    }
+
+    .event-img:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+    }
+</style>

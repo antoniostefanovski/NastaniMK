@@ -1,0 +1,31 @@
+﻿@model IEnumerable<NastaniMK_2023.Models.Event>
+@{
+    ViewBag.Title = "Настани";
+}
+
+
+<h3 class="textColor mt-5">Настани</h3>
+<p class="lead">Тука може да ги погледнете сите настани објавени од нашите организатори.</p>
+<hr/>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+
+        <div class="col-sm-4 mt-2">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="@item.ImageURL" alt="@item.Name" style="height: 286px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <p class="card-text">Датум: <span class="textColor">@item.Date</span></p>
+                    <p class="card-text">Време: <span class="textColor">@item.Time</span></p>
+                    <p class="card-text">Град: <span class="textColor">@item.City</span></p>
+                    <p class="card-text">Организатор: <span class="textColor">@item.Organizer.Name</span></p>
+                    <p class="card-text">Карти: <span class="textColor">Достапни</span></p>
+                    @Html.ActionLink("Детали", "DetailsUser", new { id = item.Id }, new { @class = "btn btn-primary" })
+                </div>
+            </div>
+        </div>
+
+    }
+</div>

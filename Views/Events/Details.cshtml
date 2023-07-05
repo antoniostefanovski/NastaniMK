@@ -1,0 +1,82 @@
+﻿@model NastaniMK_2023.Models.Event
+
+@{
+    ViewBag.Title = "Детали";
+}
+
+<h3 class="textColor mt-5">Детали за настан</h3>
+
+<div>
+    <h4>Event</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Organizer.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Organizer.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tickets)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tickets)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageURL)
+        </dt>
+
+        <dd>
+            <img src="@Model.ImageURL" style="width: 150px; height: 150px;"/>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Измени", "Edit", new { id = Model.Id }, new { @class = "btn btn-danger" }) |
+    @Html.ActionLink("Назад", "Index", null, new { @class = "btn btn-primary" })
+</p>

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<NastaniMK_2023.Models.Organizer>
+@{
+    ViewBag.Title = "Организатори";
+}
+
+<h3 class="textColor mt-5">Организатори</h3>
+<p class="lead">Тука може да ги погледнете сите организатори задолжени за настаните кои се објавени.</p>
+
+<hr/>
+
+<div class="row">
+    @foreach (var organizer in Model)
+    {
+
+        <div class="col-sm-4 mt-2">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="@organizer.Banner" alt="@organizer.Name">
+                <div class="card-body">
+                    <h5 class="card-title">@organizer.Name</h5>
+                    <p class="card-text">@organizer.Description</p>
+                    @Html.ActionLink("Повеќе инфо", "DetailsUser", new { id = organizer.Id }, new { @class="btn btn-primary" })
+                </div>
+            </div>
+        </div>
+
+    }
+</div>

@@ -1,0 +1,57 @@
+﻿@model NastaniMK_2023.Models.Organizer
+@{
+    ViewBag.Title = "Детали";
+}
+
+<h3 class="textColor mt-5">Детали за организатор</h3>
+
+<hr/>
+
+<div class="row">
+
+    <div class="d-flex justify-content-around">
+
+        <div>
+            <p class="lead">Име на организатор <br /><span class="textColor">@Model.Name</span></p>
+            <p class="lead">Што организираме ? <br /><span class="textColor">@Model.OrganizerType</span></p>
+            <p class="lead">Нешто повеќе за нас <br /><span class="textColor">@Model.Description</span></p>
+            <p class="lead">Email адреса<br /><span class="textColor">@Model.Email</span></p>
+        </div>
+
+        <div>
+            <img src="@Model.Banner" class="d-block" />
+            <p class="lead mt-4">Веб Страна  <a href="@Model.OrganizerURL" target="_blank" class="text-danger"><i class="bi bi-arrow-up-right-square"></i></a></p>
+        </div>
+
+    </div>
+
+
+</div>
+
+<hr/>
+
+<div>
+    <p class="textColor mt-2 lead">Настани организирани од овој организатор</p>
+    <ul style="list-style-type: none;">
+        @foreach(var nastan in Model.Events)
+            {
+                <li>
+                    <div class="d-flex gap-3">
+                        <p> <img src="@nastan.ImageURL" style="max-width: 100px; max-height: 100px;" /> </p>
+                        <p>
+                            <span class="lead">Настан</span> <br />
+                            <span class="lead textColor fw-semibold">@nastan.Name</span> <br />
+                            <a href="/Events/DetailsUser/@nastan.Id" target="_blank" class="lead btn btn-primary">Детали</a>
+                        </p>
+                    </div>
+                </li>
+            }
+    </ul>
+</div>
+
+<hr />
+
+<p class="mt-4">
+    @Html.ActionLink("Назад", "IndexUser", null, new { @class = "btn btn-primary" })
+</p>
+
